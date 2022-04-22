@@ -2,7 +2,7 @@
     <div class="card-body">
          <div class="side-nav">
             <aside class="column">
-            <?= $this->Html->link(__('List Book'), ['plugin' => false , 'action' => 'index'], ['label' => false, 'class' => 'btn btn-success']) ?>
+            <?= $this->Html->link(__('List Bookssss'), ['plugin' => false , 'action' => 'index'], ['label' => false, 'class' => 'btn btn-success']) ?>
        </aside>
         </div>
         <br>
