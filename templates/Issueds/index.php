@@ -2,10 +2,12 @@
     <div class="card-body">
         <div class="row justify_content_between>">
             <div class ="col-md-auto">
+                <h3><?= __('ISSUED  ') ?><a href="#" class="some-class"><img src="/library-intern/webroot/img/issued.png" style="width:50px;height:50px;" /></a></h3>
                 <?= $this->Html->link(__('+ Issued'), ['plugin' => false , 'action' => 'add'], ['label' => false, 'class' => 'btn btn-primary']) ?>
             </div>
             <div class="col-md-auto ml-auto">
-                
+                <?= $this->Form->create($filter, ['id' => 'search' , 'type' => 'get', 'class' => 'form-inline d-block d-md-flex mt-4 mt-md-0']); ?>
+                <?= $this->Form->control('search', ["label" => false, "placeholder" => "Search", "templateVars" => ["addonClass" => "mr-md-2"] ]); ?>
                 <?= $this->Form->submit('Filter', ['class' => 'btn btn-outline-primary']); ?>
                 <?= $this->Form->end(); ?>
             </div>

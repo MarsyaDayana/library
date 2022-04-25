@@ -18,13 +18,22 @@ class IssuedsController extends AppController
      */
     public function index()
     {
+        $filter = $this -> Issueds->NewEmptyEntity();
+        $conditions = [];
+
+        if(!empty($this->request->getQuery('search'))){
+            $filter->search = $this->request->getQuery('search');
+            $conditions['OR'] = [
+                    'Issueds.id LIKE' => '%' . $filter->search . '%',
+            ];
+        }
         $this->paginate = [
             'contain' => ['Borrows' => ['Members']],
         ]; 
 
         $issueds = $this->paginate($this->Issueds);
         //pr($issued); die;
-        $this->set(compact('issueds'));
+        $this->set(compact('issueds' , 'filter'));
     }
 
     /**
