@@ -72,7 +72,7 @@ class BorrowsController extends AppController
              'valueField' => 'Name']);
 
 
-        $this->set(compact('borrow', 'books', 'magazines', 'newspapers' , 'members'));
+        $this->set(compact('borrows', 'books', 'magazines', 'newspapers' , 'members'));
     }
 
     /**
@@ -159,7 +159,7 @@ class BorrowsController extends AppController
             ['keyField' => 'id',
              'valueField' => 'Name']);
 
-        $this->set(compact('borrow', 'books', 'magazines', 'newspapers' , 'members'));
+        $this->set(compact('borrows', 'books', 'magazines', 'newspapers' , 'members'));
     }
 
     /**
